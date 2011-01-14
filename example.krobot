@@ -1,0 +1,24 @@
+(* Exemple de fichier de description de protocol du Krobot. *)
+
+(* La forme des definitions est:
+
+   message <name> = <id> {
+     <argument1-name> : <argument1-type>;
+     <argument2-name> : <argument2-type>;
+     ...
+   }
+
+   Où <name> est le nom qui sera utilisé dans le programme et <id> est
+   l'identifiant CAN du message.
+
+*)
+
+message move = 1 {
+  distance : uint16;
+  velocity : uint16;
+  acceleration : uint16;
+}
+
+message move_status = 2 {
+  status : uint8;
+}
